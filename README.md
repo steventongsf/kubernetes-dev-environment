@@ -12,43 +12,61 @@
 * VirtualBox 7.0.2
 
 ## Vagrant Usage
+### Bring up environment
+```
+vagrant up
+```
+### Stop environment
+```
+vagrant halt
+```
+### Log into a VM
+```
+vagrant ssh <vm name>
+```
 
 ## Kubernetes Usage
 Coming soon
 
-## list pods on master
+### list pods on master
 ```
 kubectl get pods -n kube-system 
 ```
-## check networking
+### check networking
 ```
 kubectl get svc -n kube-system 
 ```
-## configuration
+### configuration
 ```
 kubectl --namespace kube-system get configmap kubeadm-config -o yaml
 ```
-## view nodes
+### view nodes
 ```
 kubectl get nodes
 ```
-# view dashboard
+### view dashboard
 ```
 kubectl proxy
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
 use configs/token to login
 ```
-## List all pods in namespace
+### List all pods in namespace
 ```
 kubectl get po -n kube-system
 ```
-# deploy sample application
+### deploy sample application
 ```
 kubectl apply -f ./apps/nginx-example/deployment.yml
 ```
-# test deployed application
+### test deployed application
 ```
 http://10.0.0.11:30001
+```
+### Running kubectl on your desktop
+Illustrate configuring kubectl
+```
+. ./setenv.sh
+kubectl -v
 ```
 
 
